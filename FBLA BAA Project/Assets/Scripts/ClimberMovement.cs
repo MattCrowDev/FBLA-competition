@@ -2,25 +2,26 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class playerMovement : MonoBehaviour
+public class ClimberMovement : MonoBehaviour
 {
 
     public CharacterController2D controller;
 
     public float moveSpeed = 30f;
     public float jumpSpeed = 1f;
-    public float BSpeed = 70f;
+    
 
     float horizontalMove = 0f;
-    float dashMove;
     bool jump = false;
     bool wallJump;
 
-    bool dashUse = true;
+
+    bool forwardDash = false;
+    bool backwardDash = false;
 
 
-   
-  
+
+
 
     Rigidbody2D rb;
     // Use this for initialization
@@ -45,13 +46,24 @@ public class playerMovement : MonoBehaviour
             Debug.Log("climbing wall");
         }
 
+        //wall dash
 
-        if(dashUse == false && Input.GetButtonDown("Fire1"))
+        if(forwardDash == true && Input.GetButtonDown("Jump"))
         {
-            rb.velocity = transform.right * BSpeed;
+            rb.velocity = transform.right * -70f;
 
             Debug.Log("Dash");
-            dashUse = true;
+            forwardDash = false;
+            
+        }
+
+        if (backwardDash == true && Input.GetButtonDown("Jump"))
+        {
+            rb.velocity = transform.right * 70f;
+            
+
+            Debug.Log("Dash");
+            backwardDash = false;
         }
 
     }
@@ -61,26 +73,37 @@ public class playerMovement : MonoBehaviour
         controller.Move(horizontalMove *Time.fixedDeltaTime, false, jump);
 
         jump = false;
-        
-
-
 
     }
 
 
     void OnCollisionEnter2D(Collision2D col)
     {
-        if (col.gameObject.tag.Equals("climbWall"))
+        if (col.gameObject.tag.Equals("ClimbWallF"))
         {
             wallJump = true;
-            dashUse = false;
+            forwardDash = true;
+            backwardDash = false;
+        }
+        if (col.gameObject.tag.Equals("ClimbWallB"))
+        {
+            wallJump = true;
+            backwardDash = true;
+            forwardDash = true;
+        }
+        if (col.gameObject.tag.Equals("noJump"))
+        {
+            backwardDash = false;
+            forwardDash = false;
         }
     }
 
     void OnCollisionExit2D(Collision2D col)
     {
-        if (col.gameObject.tag.Equals("climbWall"))
+        if (col.gameObject.tag.Equals("ClimbWallF"))
             wallJump = false;
-            
+        if (col.gameObject.tag.Equals("ClimbWallB"))
+            wallJump = false;
+
     }
 }

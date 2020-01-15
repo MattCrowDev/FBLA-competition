@@ -1,9 +1,9 @@
 fileFormatVersion: 2
-guid: c28378559dfd41d408b7d6b4af362cdd
+guid: aced5848050ada74d9c832b833231b95
 TextureImporter:
   fileIDToRecycleName:
-    21300000: Move-Climber_0
-    21300002: Move-Climber_1
+    21300000: idle-normal_0
+    21300002: idle-normal_1
   externalObjects: {}
   serializedVersion: 9
   mipmaps:
@@ -108,7 +108,27 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Move-Climber_0
+      name: idle-normal_0
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 32
+        width: 32
+        height: 32
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 397a6694651629e4ba41f58af6fc9487
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: idle-normal_1
       rect:
         serializedVersion: 2
         x: 0
@@ -122,27 +142,7 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 0043b9085f350a14f8b95c295d1d2a5d
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Move-Climber_1
-      rect:
-        serializedVersion: 2
-        x: 32
-        y: 0
-        width: 32
-        height: 32
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 0295dd3c3a6828d40aed7a9df40e13d3
+      spriteID: cd6a4804311d830459b47df30cea1c3e
       vertices: []
       indices: 
       edges: []
@@ -150,7 +150,7 @@ TextureImporter:
     outline: []
     physicsShape: []
     bones: []
-    spriteID: a3b94d2f468bcc44d9d252e090a9f076
+    spriteID: 2bc1e0830b39f9245ab00e85a3eda05c
     vertices: []
     indices: 
     edges: []
