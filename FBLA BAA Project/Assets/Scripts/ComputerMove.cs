@@ -35,14 +35,9 @@ public class ComputerMove : MonoBehaviour
         jump = false;
 
     }
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag.Equals("Finish"))
-        {
-            Debug.Log("Hitting");
-        }
 
-    }
+
+    
 
 
 

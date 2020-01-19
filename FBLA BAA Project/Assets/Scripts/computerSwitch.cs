@@ -17,21 +17,13 @@ public class computerSwitch : MonoBehaviour
         
     }
 
-
-
-     void OnTriggerEnter2D(Collider2D collision)
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (collision.gameObject.name.Equals("ComputerGuy"))
-        {
-            Debug.Log("Hitting");
-        }
+        Debug.Log("Hitting");
+    }
+    private void OnTriggerExit2D(Collider2D collision)
+    {
+        Debug.Log("OFF");
     }
 
-    void OnCollisionEnter2D(Collision2D col)
-    {
-        if (col.gameObject.tag.Equals("Player"))
-        {
-            Debug.Log("Hitting");
-        }
-    }
 }

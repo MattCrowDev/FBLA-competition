@@ -8,6 +8,7 @@ TagManager:
   - ClimbWallF
   - ClimbWallB
   - noJump
+  - grf
   layers:
   - Default
   - TransparentFX
@@ -20,7 +21,7 @@ TagManager:
   - Player
   - ClimberWalls
   - ComputerTriger
-  - 
+  - ground
   - 
   - 
   - 
